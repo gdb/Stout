@@ -88,14 +88,14 @@ func guessContentType(file string) string {
 }
 
 func shouldCompress(file string) bool {
-	ext := filepath.Ext(file)
-	for _, e := range NO_GZIP {
-		if "."+e == ext {
-			return false
-		}
-	}
+	// ext := filepath.Ext(file)
+	// for _, e := range NO_GZIP {
+	// 	if "."+e == ext {
+	// 		return false
+	// 	}
+	// }
 
-	return true
+	return false
 }
 
 func uploadFile(bucket *s3.Bucket, reader io.Reader, dest string, includeHash bool, caching int) string {

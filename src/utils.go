@@ -202,8 +202,8 @@ func copyFile(bucket *s3.Bucket, from string, to string, contentType string, max
 		MetadataDirective: "REPLACE",
 		ContentType:       contentType,
 		Options: s3.Options{
-			CacheControl:    fmt.Sprintf("public, max-age=%d", maxAge),
-			ContentEncoding: "gzip",
+			CacheControl: fmt.Sprintf("public, max-age=%d", maxAge),
+			// ContentEncoding: "gzip",
 		},
 	}
 
